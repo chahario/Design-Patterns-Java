@@ -1,0 +1,32 @@
+#### Definition
+    - A proxy is an object that controls access to another object.
+    - almost similar to decorator, only difference Proxy may or maynot delegate, while decorator always.
+#### Intent
+    - Control access to an Object
+    - includes:
+        - When to create it (lazy or not)
+        - whether to allow access 
+        - whether to cache
+        - whether to forward at all
+#### Types
+    - Virtual Proxy (lazy loading)
+        - Delay creation of heavy objects until it's actually needed.
+            - Large images, file / DB entities (Hibernate lazy loading) / Expensive initialization
+    - Protection Proxy (Access Control)
+        - control who can access the object.
+            - authorization , role-based access, security checks.
+    - Caching Proxy 
+        - Proxy decides WHETHER to call real object again.
+        - Avoid repeating expensive operations by caching results.
+            - DB Calls / API Calls / Computation-heavy methods.
+    - Remote Proxy
+        - Represent an object that lives in a different process/machine.
+        - local-looking object, remote execution.
+        - RPC / REST Clients / gRPC
+    - Logging / Monitoring Proxy
+        - looks like decorator but intent is control / observation.
+        - Add observability without changing the object
+            - logging / metrics / tracing
+    - Smart Proxy ( Resource Management)
+        - Do extra work before/after access.
+            - Reference Counting / Thread safety / resource locking.
