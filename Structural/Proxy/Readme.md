@@ -30,3 +30,5 @@
     - Smart Proxy ( Resource Management)
         - Do extra work before/after access.
             - Reference Counting / Thread safety / resource locking.
+
+- Proxy doesn't need abstract class. It only need a common interface of the object.
